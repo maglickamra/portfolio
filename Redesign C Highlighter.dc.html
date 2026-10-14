@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amina-Kamra Maglić — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Familjen+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #fbfbf7; }
+  a { color: #141413; }
+  a:hover { color: #141413; }
+  @media (pointer: fine) { .pc-root, .pc-root a { cursor: none; } }
+</style>
+</helmet>
+
+<div class="pc-root" style="background: #fbfbf7; color: #141413; font-family: 'Familjen Grotesk', sans-serif; min-height: 100vh; overflow-x: hidden;">
+
+  <header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; padding: 22px clamp(18px, 4vw, 48px);">
+    <span style="font-family: 'Instrument Serif', serif; font-size: 26px; letter-spacing: -0.01em;">Amina-Kamra Maglić</span>
+    <nav style="display: flex; gap: 24px; font-size: 15px; font-weight: 500;">
+      <a href="#work" data-cursor="Work" style="text-decoration: none;">Work</a>
+      <a href="#about" data-cursor="About" style="text-decoration: none;">About</a>
+      <a href="assets/Amina-Kamra-Maglic-CV.pdf" download="Amina-Kamra-Maglic-CV.pdf" data-cursor="Download" style="text-decoration: none;">CV</a>
+      <a href="mailto:maglickamra@gmail.com" data-cursor="Write me" style="text-decoration: none;">Contact</a>
+    </nav>
+  </header>
+
+  <section style="padding: clamp(30px, 6vw, 84px) clamp(18px, 4vw, 48px) clamp(30px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 28px; align-items: end;">
+    <h1 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(58px, 9.6vw, 156px); line-height: 0.88; letter-spacing: -0.035em; margin: 0; grid-column: 1 / -1;">I make <em>complicated</em> things feel <span style="background: linear-gradient(transparent 52%, #c6f24e 52%, #c6f24e 92%, transparent 92%); padding: 0 0.05em;">obvious.</span></h1>
+    <p style="font-size: clamp(17px, 1.5vw, 20px); line-height: 1.5; max-width: 42ch; margin: 0;">Zdravo — I'm a UX &amp; visualisation designer from Sarajevo. I work across HCI, product design and HMI, and I still crochet my own projection screens.</p>
+    <div style="display: flex; gap: 18px; justify-content: flex-end; align-items: end;">
+      <div style="width: clamp(90px, 9vw, 130px); aspect-ratio: 1; transform: rotate(-6deg);"><image-slot id="rc-sticker-1" shape="rounded" radius="14" fit="cover" placeholder="Scan"></image-slot></div>
+      <div style="width: clamp(90px, 9vw, 130px); aspect-ratio: 1; transform: rotate(5deg) translateY(-14px);"><image-slot id="rc-sticker-2" shape="circle" fit="cover" placeholder="Scan"></image-slot></div>
+    </div>
+  </section>
+
+  <section id="work" style="padding: 0 clamp(18px, 4vw, 48px) clamp(48px, 7vw, 96px);">
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); grid-auto-flow: dense;">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <a href="{{ p.href }}" data-cursor="{{ p.cursor }}" style="grid-column: span {{ p.span }}; display: block; text-decoration: none; color: #141413; min-width: 0;">
+          <div style="aspect-ratio: {{ p.ratio }}; overflow: hidden; border-radius: 10px; background: #ecebe4;">
+            <img src="{{ p.img }}" alt="{{ p.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .4s;" style-hover="transform: scale(1.04) rotate(-0.6deg);">
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 12px;">
+            <span style="font-family: 'Instrument Serif', serif; font-size: clamp(24px, 2.4vw, 34px); line-height: 1; letter-spacing: -0.01em; background: linear-gradient(transparent 60%, #c6f24e 60%) no-repeat 0 0 / 0% 100%; transition: background-size .35s ease;" style-hover="background-size: 100% 100%;">{{ p.title }}</span>
+            <span style="font-size: 13px; color: #6b6a63;">{{ p.num }}</span>
+          </div>
+          <div style="font-size: 14px; margin-top: 6px; color: #55544e;">{{ p.tags }}</div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="about" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(28px, 5vw, 72px); padding: clamp(48px, 7vw, 96px) clamp(18px, 4vw, 48px); border-top: 1px solid #dddbd2; align-items: start;">
+    <img src="assets/portrait.jpeg" alt="Amina-Kamra Maglić" style="width: 100%; max-width: 360px; aspect-ratio: 1; object-fit: cover; border-radius: 50% 50% 10px 10px; display: block;">
+    <div>
+      <h2 style="font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(38px, 5vw, 68px); line-height: 0.95; letter-spacing: -0.02em; margin: 0 0 22px;">Research brain, <em>maker hands.</em></h2>
+      <p style="font-size: 18px; line-height: 1.55; max-width: 50ch; margin: 0 0 14px;">Interaction design at the Glasgow School of Art, interactive media technology at KTH, a thesis on digital twins with ABB. Before that: years of brand identity, motion and installations people walk into.</p>
+      <p style="font-size: 18px; line-height: 1.55; max-width: 50ch; margin: 0 0 26px;">I want to join a consultancy or product team where <span style="background: linear-gradient(transparent 55%, #c6f24e 55%);">research and craft live in the same person.</span></p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <a href="assets/Amina-Kamra-Maglic-CV.pdf" download="Amina-Kamra-Maglic-CV.pdf" data-cursor="Download" style="background: #141413; color: #fbfbf7; text-decoration: none; font-weight: 500; padding: 12px 20px; border-radius: 99px;" style-hover="background: #c6f24e; color: #141413;">Download CV</a>
+        <a href="https://www.linkedin.com/in/amina-kamra-magli%C4%87-93987b1a9/" target="_blank" rel="noopener" data-cursor="LinkedIn" style="text-decoration: none; font-weight: 500; padding: 11px 20px; border-radius: 99px; border: 1px solid #141413;" style-hover="background: #c6f24e;">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding: clamp(48px, 8vw, 110px) clamp(18px, 4vw, 48px) 26px; border-top: 1px solid #dddbd2;">
+    <div style="font-size: 15px; margin-bottom: 8px; color: #55544e;">Imaš projekat? Have a project?</div>
+    <a href="mailto:maglickamra@gmail.com" data-cursor="Write me" style="display: inline-block; font-family: 'Instrument Serif', serif; font-size: clamp(36px, 8vw, 128px); letter-spacing: -0.03em; line-height: 0.95; text-decoration: none; word-break: break-word; background: linear-gradient(transparent 62%, #c6f24e 62%, #c6f24e 90%, transparent 90%);">maglickamra@gmail.com</a>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 48px; font-size: 13px; color: #6b6a63;">
+      <span>© 2026 · Sarajevo</span>
+      <span>Hvala ✿</span>
+    </div>
+  </footer>
+
+  <div ref="{{ cursor }}" style="position: fixed; left: 0; top: 0; z-index: 99; pointer-events: none; display: none; align-items: center; gap: 8px; transform: translate(-6px, -6px);">
+    <span style="width: 12px; height: 12px; border-radius: 50%; background: #141413; flex: none;"></span>
+    <span ref="{{ cursorLabel }}" style="background: #c6f24e; color: #141413; font-size: 14px; font-weight: 700; padding: 5px 11px; border-radius: 99px; white-space: nowrap; transform: scale(0); transform-origin: left center; transition: transform .2s cubic-bezier(.2,.9,.3,1.3);"></span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  cursor = React.createRef();
+  cursorLabel = React.createRef();
+  componentDidMount() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    const c = this.cursor.current, l = this.cursorLabel.current; if (!c || !l) return;
+    c.style.display = 'flex';
+    this.onMove = (e) => {
+      c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px';
+      const t = e.target.closest && e.target.closest('[data-cursor]');
+      if (t) { l.textContent = t.getAttribute('data-cursor'); l.style.transform = 'scale(1)'; }
+      else { l.style.transform = 'scale(0)'; }
+    };
+    window.addEventListener('mousemove', this.onMove);
+  }
+  componentWillUnmount() { window.removeEventListener('mousemove', this.onMove); }
+  renderVals() {
+    return {
+      cursor: this.cursor, cursorLabel: this.cursorLabel,
+      projects: [
+        { num: '01', title: 'Digital twins at ABB', tags: 'MSc thesis · UX research · Industrial HMI', img: 'assets/abb-interface.png', span: 7, ratio: '4 / 3', cursor: 'Read the case →', href: '#' },
+        { num: '02', title: 'Journey', tags: 'Product design · Information visualisation', img: 'assets/journey.png', span: 5, ratio: '4 / 5', cursor: 'Plan a trip →', href: '#' },
+        { num: '03', title: 'Domicile Rediscovered', tags: 'Processing · Crochet · Projection mapping', img: 'assets/slot-p1-hero.webp', span: 5, ratio: '4 / 5', cursor: 'Step inside →', href: '#' },
+        { num: '04', title: 'Domicile Augmented', tags: 'Processing · Projection mapping', img: 'assets/slot-p2-hero.webp', span: 7, ratio: '4 / 3', cursor: 'Look closer →', href: '#' },
+        { num: '05', title: 'Expressive Data', tags: 'Photography · Processing', img: 'assets/slot-p4-hero.webp', span: 6, ratio: '1 / 1', cursor: 'See the data →', href: '#' },
+        { num: '06', title: 'SKRIPTA IdeaLab', tags: 'Web design · Brand', img: 'assets/skripta-prostor.png', span: 6, ratio: '1 / 1', cursor: 'Visit →', href: '#' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
