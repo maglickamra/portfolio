@@ -3,10 +3,10 @@
    so nothing moves while this file loads. */
 
 /* ===== Colour tokens =================================================================
-   Lime is energy and highlight. Heritage red (madder) is craft and emphasis.
+   Forest green is energy and highlight. Heritage red (madder) is craft and emphasis.
    Do not use both at equal weight in one component. */
 :root {
-  --lime: #c6f24e;
+  --forest: #2f5d3a;         /* 7.0:1 on #fbfbf7; #fbfbf7 on it is 7.7:1 */
   --heritage: #7a1f2b;       /* 9.8:1 on #fbfbf7; #fbfbf7 on it is 9.8:1 */
   --heritage-dark: #5e1520;  /* hover state for heritage buttons */
   --heritage-ink: #fbfbf7;   /* text on heritage */
@@ -47,11 +47,20 @@
 .cv-bullet { color: var(--heritage); }
 
 /* ===== Marker stroke =================================================================
-   A hand-drawn lime stroke behind highlighted phrases. Uneven edges, tapered ends.
+   A hand-drawn forest green stroke behind highlighted phrases, full height, with uneven
+   edges and tapered ends. Text inside it is off-white (7.7:1).
    Each line of a wrapped phrase gets its own stroke (box-decoration-break: clone).
-   It replaces the flat inline gradient once this file loads; the gradient stays as fallback. */
+   It replaces the flat inline fill once this file loads; the fill stays as fallback. */
 .mark {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24' preserveAspectRatio='none'%3E%3Cpath fill='%23c6f24e' d='M3.5 13.2C18 12.1 33 13.4 49 12.6S86 11.7 101 12.9 112 12.2 116.8 12.8L118.6 15.4C117.4 17.6 118.9 19.6 116.6 21.8 99 22.6 83 21.4 64 22.3S27 21.9 13 22.4 4.4 21.6 2.2 21.2C1.2 18.9 2.6 16.8 1.4 14.9Z'/%3E%3Cpath fill='%23c6f24e' fill-opacity='.55' d='M6 21.6C30 22.8 58 21.9 84 22.9 98 23.4 108 22.6 114.5 22.8L113 23.6C96 23.9 70 23.4 44 23.7 26 23.9 12 23.5 6.5 23.3Z'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100% !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24' preserveAspectRatio='none'%3E%3Cpath fill='%232f5d3a' d='M2.6 3.4C17 2.2 34 3.6 51 2.7S88 1.9 103 3.1 113 2.4 117.6 3.3L118.9 7.2C117.8 10.5 119.4 14.2 118.2 17.6 118.8 19.6 118 21.4 116.4 21.9 99 22.9 83 21.5 64 22.5S27 22 13 22.7 4.4 21.8 2 21.3C.9 17.9 2.1 14.4 1.1 11 .8 8.2 1.5 5.6 2.6 3.4Z'/%3E%3Cpath fill='%232f5d3a' fill-opacity='.45' d='M7 22.4C31 23.3 59 22.4 85 23.2 99 23.6 109 22.9 114.6 23.1L113.2 23.8C96 24 70 23.7 44 23.9 26 24 12 23.8 7.4 23.6Z'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100% !important;
+  color: #fbfbf7;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Underline stroke: the same hand-drawn green, as a line under long titles that wrap. */
+.mark-under {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24' preserveAspectRatio='none'%3E%3Cpath fill='%232f5d3a' d='M2 18.1C20 17.4 38 18.3 57 17.7S95 17.2 117.5 17.9L118.4 19.4C117 20.4 100 20.2 80 20.6 60 21 30 20.4 3.2 20.9 1.4 20.3 1.3 19 2 18.1Z'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100% !important;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
