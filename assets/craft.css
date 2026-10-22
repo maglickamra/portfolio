@@ -6,7 +6,7 @@
    Forest green is energy and highlight. Heritage red (madder) is craft and emphasis.
    Do not use both at equal weight in one component. */
 :root {
-  --forest: #2f5d3a;         /* 7.0:1 on #fbfbf7; #fbfbf7 on it is 7.7:1 */
+  --forest: #2f5d3a;         /* 7.4:1 on #fbfbf7, and #fbfbf7 on it */
   --heritage: #7a1f2b;       /* 9.8:1 on #fbfbf7; #fbfbf7 on it is 9.8:1 */
   --heritage-dark: #5e1520;  /* hover state for heritage buttons */
   --heritage-ink: #fbfbf7;   /* text on heritage */
@@ -48,7 +48,7 @@
 
 /* ===== Marker stroke =================================================================
    A hand-drawn forest green stroke behind highlighted phrases, full height, with uneven
-   edges and tapered ends. Text inside it is off-white (7.7:1).
+   edges and tapered ends. Text inside it is off-white (7.4:1).
    Each line of a wrapped phrase gets its own stroke (box-decoration-break: clone).
    It replaces the flat inline fill once this file loads; the fill stays as fallback. */
 .mark {
