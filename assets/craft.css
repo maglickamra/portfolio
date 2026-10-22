@@ -2,6 +2,16 @@
    Paint only: colours, masks and backgrounds. Sizes and layout live in the page markup,
    so nothing moves while this file loads. */
 
+/* ===== Colour tokens =================================================================
+   Lime is energy and highlight. Heritage red (madder) is craft and emphasis.
+   Do not use both at equal weight in one component. */
+:root {
+  --lime: #c6f24e;
+  --heritage: #7a1f2b;       /* 9.8:1 on #fbfbf7; #fbfbf7 on it is 9.8:1 */
+  --heritage-dark: #5e1520;  /* hover state for heritage buttons */
+  --heritage-ink: #fbfbf7;   /* text on heritage */
+}
+
 /* ===== Motif set =====================================================================
    Original geometric shapes, folk-inspired, drawn for this site. Each is under 1KB.
    They are used as masks, so they take the colour of the element (currentColor).
@@ -27,14 +37,14 @@
 /* Stitch divider: a row of cross stitches. */
 .stitch {
   display: block;
-  color: #b3afa3;
+  color: var(--heritage);
   background-color: currentColor;
   -webkit-mask: var(--motif-stitch) left center / 14px 8px repeat-x;
   mask: var(--motif-stitch) left center / 14px 8px repeat-x;
 }
 
 /* Bullets for Experience and Skills headings. */
-.cv-bullet { color: #7a7769; }
+.cv-bullet { color: var(--heritage); }
 
 /* ===== Marker stroke =================================================================
    A hand-drawn lime stroke behind highlighted phrases. Uneven edges, tapered ends.
