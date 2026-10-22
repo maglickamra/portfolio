@@ -35,3 +35,13 @@
 
 /* Bullets for Experience and Skills headings. */
 .cv-bullet { color: #7a7769; }
+
+/* ===== Marker stroke =================================================================
+   A hand-drawn lime stroke behind highlighted phrases. Uneven edges, tapered ends.
+   Each line of a wrapped phrase gets its own stroke (box-decoration-break: clone).
+   It replaces the flat inline gradient once this file loads; the gradient stays as fallback. */
+.mark {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24' preserveAspectRatio='none'%3E%3Cpath fill='%23c6f24e' d='M3.5 13.2C18 12.1 33 13.4 49 12.6S86 11.7 101 12.9 112 12.2 116.8 12.8L118.6 15.4C117.4 17.6 118.9 19.6 116.6 21.8 99 22.6 83 21.4 64 22.3S27 21.9 13 22.4 4.4 21.6 2.2 21.2C1.2 18.9 2.6 16.8 1.4 14.9Z'/%3E%3Cpath fill='%23c6f24e' fill-opacity='.55' d='M6 21.6C30 22.8 58 21.9 84 22.9 98 23.4 108 22.6 114.5 22.8L113 23.6C96 23.9 70 23.4 44 23.7 26 23.9 12 23.5 6.5 23.3Z'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100% !important;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
