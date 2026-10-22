@@ -17,10 +17,26 @@
     'skripta': 'SKRIPTA IdeaLab'
   };
 
+  // ===== Bosnian strings ===============================================================
+  // Every new Bosnian label on the site lives here (home, case pages and 404.html).
+  // TODO(Kamra): proofread every line below.
+  var bs = {
+    work: 'Radovi',
+    about: 'O meni',
+    experience: 'Iskustvo',
+    education: 'Obrazovanje',
+    skills: 'Vještine',
+    contact: 'Kontakt',
+    open: 'Otvori',
+    allWork: 'Svi radovi',
+    notFound: 'Ovdje nema ničega.',
+    home: 'Početna'
+  };
+
   function pageTitle(slug) {
     var t = titles[slug] || titles.fridgepeek;
     return t + ' | Amina-Kamra Maglić';
   }
 
-  window.SITE = { hidden: hidden, titles: titles, pageTitle: pageTitle };
+  window.SITE = { hidden: hidden, titles: titles, pageTitle: pageTitle, bs: bs };
 })();
